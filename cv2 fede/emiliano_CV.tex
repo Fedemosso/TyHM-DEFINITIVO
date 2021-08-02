@@ -1,0 +1,169 @@
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+\colorlet{tagline}{VividPurple}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Federica Mosso}
+  \tagline{Estudiante de Ingeniería Industrial}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+\photo{2.5cm}{Fede}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{fedemosso.fm@gmail.com}
+%   \phone{000-00-0000}
+  \location{Luján de Cuyo, Mendoza, Argentina}
+  \phone{+54 9 261 573-5630}
+  \linkedin{linkedin.com/in/federica-mosso-63b00a1b5/}
+
+}
+
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Exeriencia laboral}
+\cvevent{Call Center}{Mendoza Broker}{Octubre 2017 -- Marzo 2018}{Zurich Seguros}
+\begin{itemize}
+\item Ventas de seguros para el hogar
+\end{itemize}
+\cvevent{Marketing}{INCA Empresa Junior}{Abril 2020 -- Presente}{Universidad Nacional de Cuyo}
+\begin{itemize}
+\item  Administración de Redes Sociales
+\item Creación de contenido
+\item Diseño de publicidad
+
+\end{itemize}
+
+\divider
+
+\cvsection{Formación}
+\cvevent{Bachiller en Ciencias Naturales }{Colegio Universitario Central Gral. José de San Martin}{2013 -- 2017}{Mendoza, Argentina}
+\cvevent{Ingeniería Industrial }{Facultad de Ingeniería, Universidad Nacional de Cuyo}{2018 -- Presente}{Mendoza, Argentina}
+
+\divider
+
+\cvsection{Extracurricular}
+\cvevent{Ayudantía de Cátedra}{Geometría Analítica}{Primer semestre 2019}{Facultad de Ingeniería, UNCuyo}
+
+\divider
+
+\cvsection{Capacitaciones varias}
+\begin{itemize}
+\item Taller de Oratoria - INCA Empresa Junior
+\item Curso de Excel Avanzado - Facultad de Ingeniería, UNCuyo
+\item Curso de Ventas - Juan Martín De Rosas
+\item Taller de Illustrator - INCA Empresa Junior
+\end{itemize}
+
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the currentc column
+
+
+
+%% Switch to the right column. This will now automatically move to la segunda página si el contenido es demasiado largo.
+\switchcolumn
+
+\cvsection{presentación}
+\begin{quote}
+Soy estudiante de 4° año de
+Ingeniería Industrial. Me considero una
+persona proactiva, ingeniosa, me
+gusta el trabajo en equipo y estoy
+dispuesta a aprender nuevas
+herramientas y métodos de trabajo.
+
+\end{quote}
+
+\divider\smallskip
+
+\cvsection{Fortalezas}
+\cvtag{Esfuerzo} 
+\cvtag{Buena comunicación}
+\cvtag{Prolijidad}
+\cvtag{Predisposición}
+\cvtag{Orden}
+
+\divider\smallskip
+
+\cvsection{Herramientas       informáticas}
+\cvtag{Paquete Office} 
+\cvtag{Google Drive}
+\cvtag{Trello}
+\cvtag{Illustrator}
+\cvtag{LaTeX}
+
+\divider\smallskip
+
+\cvsection{Idiomas}
+\cvskill{Español}{5}
+\cvskill{Inglés}{3}
+\cvskill{Francés}{2}
+
+%\divider\smallskip
+
+%\cvsection{Rerencias }
+%\cvref{Prof.\ Ricardo R.\ Palma}{rpalma@uncu.edu.ar}
+%{Universidad Nacional de Cuyo\\Fac Ing Mendoza, Argentina}
+
+%\divider
+
+%\cvref{Prof.\ Silvia R.\ Raichman}{silvia.raichman@ingenieria.uncuyo.edu.ar}
+%{Universidad Nacional de Cuyo\\Fac Ing Mendoza, Argentina}
+
+\end{paracol}
+
+\end{document}
